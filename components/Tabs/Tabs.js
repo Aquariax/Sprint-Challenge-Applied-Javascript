@@ -46,8 +46,13 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    const card = document.querySelectorAll(`.card[data-tab='${this.cardElement}']`)
-    card.forEach( card => card.style.display = "flex") 
+    if(this.cardElement === "all"){
+      let card = document.querySelectorAll(`.card`)
+      card.forEach( card => card.style.display = "flex")
+    }else{
+      let card = document.querySelectorAll(`.card[data-tab='${this.cardElement}']`)
+      card.forEach( card => card.style.display = "flex") 
+    }
   }
 
 }
